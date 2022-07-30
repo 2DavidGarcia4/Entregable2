@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 function CardWeather({data}){
+   const [loaded, updateLoaded] = useState(true)
+   setTimeout(()=> updateLoaded(false), 6*60000)
    const [degrees, getDegrees] = useState(1)
    const degreesDic = {
       "1": [data?.main.temp, "°K"],
@@ -8,7 +10,7 @@ function CardWeather({data}){
       "3": [((data?.main.temp-273.15) * 9/5 + 32).toFixed(2), "°F"]
    }
   
-   if(!data){
+   if(loaded && !data){
       return (
          <div className="loaded">
             <div className="rain">
