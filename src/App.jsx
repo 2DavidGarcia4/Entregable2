@@ -4,7 +4,7 @@ import CardWeather from './components/CardWeather'
 
 let color = "#FF5733"
 function App() {
-   const [weather, getWeather] = useState(null), cluds = 40
+   const [weather, getWeather] = useState(null), cluds = weather?.clouds.all || 10
    // weather?.clouds.all || 10
    if(cluds <= 20){
       color = "#EF6D00"
