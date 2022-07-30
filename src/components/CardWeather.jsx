@@ -11,7 +11,7 @@ function CardWeather({data}){
       "3": [((data?.main.temp-273.15) * 9/5 + 32).toFixed(2), "°F"]
    }
   
-   if(loaded && !data){
+   if(loaded || !data){
       return (
          <div className="loaded">
             <div className="rain">
