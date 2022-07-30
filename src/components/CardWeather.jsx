@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import cloud from "../imgs/cloud.png"
 
 function CardWeather({data}){
    const [loaded, updateLoaded] = useState(true)
@@ -14,7 +15,7 @@ function CardWeather({data}){
       return (
          <div className="loaded">
             <div className="rain">
-               <img src="./public/cloud.png" alt="" />
+               <img src={cloud} alt="" />
                <div className="drops">
                   <div className="drops_cont cont1">
                      <span className="drop1" style={{"--i": "2s"}}></span>
