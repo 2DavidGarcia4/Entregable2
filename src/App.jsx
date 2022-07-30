@@ -17,6 +17,9 @@ function App() {
    }else if(cluds >= 80){
       color = "#0538D5"
    }
+
+   // Le doy el color al body por que en movil al mover la pantalla se mira los bordes blancos si solo le doy color al app
+   document.querySelector("body").style.backgroundColor = color
    
    useEffect(()=>{
     navigator.geolocation.getCurrentPosition((pos)=>{
@@ -27,7 +30,7 @@ function App() {
   // console.log(weather)
 
    return (
-      <div className="App" style={{backgroundColor: color}}>
+      <div className="App">
          <CardWeather data={weather} />
       </div>
    )
