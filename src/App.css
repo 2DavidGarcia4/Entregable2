@@ -95,7 +95,7 @@
 
 .weather{
   color: white;
-  height: 400px;
+  height: 440px;
   padding: 20px;
   display: flex;
   position: relative;
@@ -162,7 +162,7 @@
   position: relative;
 }
 
-.data_component:nth-child(2)::after, .data_component:nth-child(3)::after{
+.data_component:nth-child(2)::after, .data_component:nth-child(3)::after, .data_component:nth-child(4)::after{
   content: "";
   position: absolute;
   width: 100%;

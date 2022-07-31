@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import cloud from "../imgs/cloud.png"
 
 function CardWeather({data}){
+   // console.log(data)
    const [loaded, updateLoaded] = useState(true)
    setTimeout(()=> updateLoaded(false), 6000)
-   const [degrees, getDegrees] = useState(1)
+   const [degrees, getDegrees] = useState(2)
    const degreesDic = {
       "1": [data?.main.temp, "°K"],
       "2": [(data?.main.temp-273.15).toFixed(2), "°C"],
@@ -67,6 +68,7 @@ function CardWeather({data}){
          <div className="data">
             <div className="data_title">{data ? data.weather[0].description.replace(data.weather[0].description[0], data.weather[0].description[0].toUpperCase()) : ""}</div>
             <div className="data_component"><p><i className="bi bi-clouds"></i> Cluds:</p> <span>{data?.clouds.all} %</span></div>
+            <div className="data_component"><p><i className="bi bi-droplet"></i> Humidity:</p> <span>{data?.main.humidity} %</span></div>
             <div className="data_component"><p><i className="bi bi-wind"></i> Wind speed:</p> <span>{data?.wind.speed} m/s</span></div>
             <div className="data_component"><p><i className="bi bi-thermometer-high"></i> Pressure:</p> <span>{data?.main.pressure} mb</span></div>
          </div>
