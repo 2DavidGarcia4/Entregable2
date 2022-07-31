@@ -3,7 +3,7 @@ import cloud from "../imgs/cloud.png"
 
 function CardWeather({data}){
    const [loaded, updateLoaded] = useState(true)
-   setTimeout(()=> updateLoaded(false), 6*60000)
+   setTimeout(()=> updateLoaded(false), 6000)
    const [degrees, getDegrees] = useState(1)
    const degreesDic = {
       "1": [data?.main.temp, "°K"],
