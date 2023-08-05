@@ -19,10 +19,10 @@ function App() {
    }
 
    // Le doy el color al body por que en movil al mover la pantalla se mira los bordes blancos si solo le doy color al app
-   document.querySelector("body").style.backgroundColor = color
+   document.body.style.backgroundColor = color
    
    useEffect(()=>{
-    navigator.geolocation.getCurrentPosition((pos)=>{
+      navigator.geolocation.getCurrentPosition((pos)=>{
          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=44df1c19a531744261c9018e2290fe06`).then(prom=> prom.json()).then(res=> getWeather(res))
       },(error)=> console.log(error))
    }, [])
